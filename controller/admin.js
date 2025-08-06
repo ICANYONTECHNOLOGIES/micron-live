@@ -25,7 +25,7 @@ const adminController = {
       // Check if user already exists
       const existingUser = await Admin.findOne({ email: email });
       if (existingUser) {
-        return res.send("hu", {
+        return res.render("admin/signup", {
           message: "Username or email already exists",
           messageClass: "error",
         });
@@ -43,7 +43,7 @@ const adminController = {
 
       await newAdmin.save();
 
-      res.render("admin/dashboard", {
+      res.render("admin/login", {
         message: "Registration successful! You can now log in.",
         messageClass: "success",
       });
