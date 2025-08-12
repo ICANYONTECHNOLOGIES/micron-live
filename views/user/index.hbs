@@ -1138,7 +1138,7 @@ document.querySelectorAll('.main-cat').forEach(mainCatElem => {
       email: document.getElementById('email').value,
       phone: document.getElementById('phone').value,
       message: document.getElementById('message').value,
-    };
+    }; 
 
     try {
       // Wait for 2 seconds before submitting
@@ -1151,8 +1151,8 @@ document.querySelectorAll('.main-cat').forEach(mainCatElem => {
         },
         body: JSON.stringify(data),
       });
-
       const result = await response.json();
+       console.log(result)
 
       if (response.ok) {
         Swal.fire({
@@ -1187,7 +1187,6 @@ document.querySelectorAll('.main-cat').forEach(mainCatElem => {
 
 
 
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
 

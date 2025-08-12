@@ -94,7 +94,7 @@ router.put('/edit-sub-admin',verifyAdminToken,adminController.adminEditSubAdmin,
 router.delete('/delete-sub-admin/:id',adminController.adminDeleteSubAdmin)
 router.put('/change-password',verifyAdminToken,adminController.AdminChangeSubAdminPassword);
 router.get('/user-query',verifyAdminToken,adminController.GetUserQuery);
-router.post('/user-query',verifyAdminToken,adminController.AddUserQuery);
+router.post('/user-query',adminController.AddUserQuery);
 router.delete('/user-query/:id',verifyAdminToken,adminController.AdminDeleteUserQuery);
 
 router.get('/logout',adminController.logOutAdmin)
