@@ -10,7 +10,7 @@ const {
 const connection = require("./db");
 const userRouter = require("./routes/user");
 const adminRouter = require("./routes/admin");
-const cookieParser = require("cookie-parser"); // ✅ import it\
+const cookieParser = require("cookie-parser"); 
 var createError = require("http-errors");
 
 app.use(cookieParser()); // ✅ use it before any route

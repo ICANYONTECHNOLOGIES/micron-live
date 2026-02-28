@@ -7,10 +7,6 @@
   </div>
 </div>
 
-
-
-
-
 <header>
   <div class="container-fluid px-0">
     <div class="main-hero-section">
@@ -24,16 +20,17 @@
           <li class="active" data-index="0"></li>
           <li data-index="1"></li>
           <li data-index="2"></li>
-          <li data-index="3"></li>
-          <li data-index="4"></li>
+          {{!-- <li data-index="3"></li>
+          <li data-index="4"></li> --}}
         </ul>
       </div>
-      <nav class="navbar navbar-user navbar-expand-lg navbar-light" >
+      <nav class="navbar navbar-user navbar-expand-lg navbar-light">
         <div class="container-fluid">
           <div class="compay-logo">
             <a class="navbar-brand d-flex align-items-end" href="#">
               <img src="images/micron-logo.svg" class="img-fluid" alt="" />
-              <h1 class="compay-name text-white" style="z-index: 0;">MICRON ELECTRIC</h1>
+              <h1 class="compay-name text-white" style="z-index: 0;">MICRON
+                ELECTRIC</h1>
             </a>
           </div>
           <button
@@ -53,92 +50,106 @@
                 <a
                   class="nav-link nav-link-user"
                   aria-current="page"
+                  href="/"
+                >Home</a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link nav-link-user"
+                  aria-current="page"
                   href="/about-us"
                 >About Us</a>
               </li>
-<li class="nav-item dropdown position-relative">
-  <a class="nav-link nav-link-user" href="#" id="productDropdown">Products</a>
- <ul class="dropdown-menu multi-level py-0" id="mainCategoryDropdown" style="border: 1px solid #0000001A">
-  {{#each categories}}
-    <li class="dropdown-submenu">
-      <a class="dropdown-item main-cat" data-category="{{mainCategory}}" href="/category/{{mainCategory}}">{{mainCategory}}</a>
-      <ul class="dropdown-menu sub-cat-menu py-0 border-0" style="border: 1px solid #0000001A"></ul>
-    </li>
-  {{/each}}
-</ul>
-</li>
-
-
-
-
-
-
-
+              <li class="nav-item dropdown position-relative">
+                <a
+                  class="nav-link nav-link-user"
+                  href="#"
+                  id="productDropdown"
+                >Products</a>
+                <ul
+                  class="dropdown-menu multi-level py-0"
+                  id="mainCategoryDropdown"
+                  style="border: 1px solid #0000001A"
+                >
+                  {{#each categories}}
+                    <li class="dropdown-submenu">
+                      <a
+                        class="dropdown-item main-cat"
+                        data-category="{{mainCategory}}"
+                        href="/category/{{mainCategory}}"
+                      >{{mainCategory}}</a>
+                      <ul
+                        class="dropdown-menu sub-cat-menu py-0 border-0"
+                        style="border: 1px solid #0000001A"
+                      ></ul>
+                    </li>
+                  {{/each}}
+                </ul>
+              </li>
 
               <li class="nav-item">
-                <a class="nav-link nav-link-user" href="/downloads">Downloads</a>
+                <a
+                  class="nav-link nav-link-user"
+                  href="/downloads"
+                >Downloads</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link nav-link-user" href="/contact-us">Contact Us</a>
               </li>
               <a href="/contact-us">
-              <div class="nav-btn">
-                <button>GET A QUOTE</button>
-              </div></a>
+                <div class="nav-btn">
+                  <button>GET A QUOTE</button>
+                </div></a>
             </ul>
           </div>
         </div>
       </nav>
 
-      
-
       <div class="hero-main">
         <div class="hero-section-text">
-        <h1 class="dynamic-text"></h1>
-        <h1 class="static-text">quality solutions</h1>
+          <h1 class="dynamic-text"></h1>
+          <h1 class="static-text">quality solutions</h1>
+        </div>
+
+        <form id="searchForm" action="">
+          <div class="search-bar">
+            <select class="category-select" id="categorySelect">
+              <option value="">Category</option>
+              {{#each categories}}
+                <option value="{{mainCategory}}">{{mainCategory}}</option>
+              {{/each}}
+            </select>
+
+            <input
+              type="text"
+              class="search-input"
+              id="searchInput"
+              placeholder="Search your product here"
+              autocomplete="off"
+            />
+
+            <button class="search-button" type="submit">
+              <img src="images/image (5).svg" alt="" />
+            </button>
+            <div>
+              <ul
+                id="suggestionsList"
+                class="list-group mt-4"
+                style="z-index: 999;"
+              ></ul>
+            </div>
+          </div>
+        </form>
       </div>
 
-<form id="searchForm" action="">
-  <div class="search-bar">
-    <select class="category-select" id="categorySelect">
-      <option value="">Category</option>
-      {{#each categories}}
-      <option value="{{mainCategory}}">{{mainCategory}}</option>
-      {{/each}}
-    </select>
-
-    <input
-      type="text"
-      class="search-input"
-      id="searchInput"
-      placeholder="Search your product here"
-      autocomplete="off"
-    />
-
-    <button class="search-button" type="submit">
-      <img src="images/image (5).svg" alt="" />
-    </button>
-    <div>
-      <ul id="suggestionsList" class="list-group mt-4" style="z-index: 999;"></ul>
-    </div>
-  </div>
-</form>
-      </div>
-
-     
-
-{{!-- <!-- Suggestions dropdown -->
+      {{! <!-- Suggestions dropdown -->
 <div class="container sm-container">
   <div class="single-quates-section-sm d-flex align-items-center justify-content-center">
     <div class="quate-sm text-center">
       <h5 class="quote-animated-text"></h5>
     </div>
   </div>
-</div> --}}
-
-
-
-      
+</div> }}
 
     </div>
   </div>
@@ -148,13 +159,13 @@
   <div class="container">
     <div class="who-we-are-section">
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-4">
           <div class="who-we-are-partOne">
             <h3>WHO WE ARE</h3>
-            <img src="images/who-we-are-img.svg" alt="" />
+            <img src="images/who-we-are-img.png" alt="" />
           </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-8">
           <div class="who-we-are-partTwo">
             <p>At Micron Electric, we deliver complete solutions for the LV
               switchgear industry. Since our establishment in 2017, we’ve been
@@ -192,40 +203,32 @@
         </div>
 
         <!--  Only ONE container -->
-       <div class="carousel-container">
-  <div class="carousel-wrapper">
-    <div class="carousel" id="carousel">
-      {{#each categories}}
-        <div class="box" onclick="goToCategory('{{mainCategory}}')">
-          <div class="carousel-img">
-          <img src="{{imageUrl}}" alt="{{mainCategory}}" />
-            <h5 class="carousel-title ps-1">{{mainCategory}}</h5>
+        <div class="carousel-container">
+          <div class="carousel-wrapper">
+            <div class="carousel" id="carousel">
+              {{#each categories}}
+                <div class="box" onclick="goToCategory('{{mainCategory}}')">
+                  <div class="carousel-img">
+                    <img src="{{imageUrl}}" alt="{{mainCategory}}" />
+                    <h5 class="carousel-title ps-1">{{mainCategory}}</h5>
+                  </div>
+                </div>
+              {{/each}}
+            </div>
           </div>
         </div>
-      {{/each}}
-    </div>
-  </div>
-</div>
 
       </div>
     </section>
 
-
-
-
-
-
-
-    
-
   </div>
 </section>
 
-<section style="overflow: hidden;">
+<section style="overflow: hidden;" class="record-container-wrapper">
   <div class="container">
     <div class="record-container">
       <div class="row">
-        <div class="col-md-6 d-flex align-items-center">
+        <div class="col-md-6">
           <div class="content-left">
             <h2 class="section-title">Growing Company Network</h2>
             <p class="section-text">
@@ -241,57 +244,68 @@
             </p>
           </div>
         </div>
-<div class="col-12 col-md-6 px-0">
-  <div class="content-right">
-    <div class="company-record">
-      <div class="row">
-        <!-- Item 1 -->
-        <div class="col-6 col-md-3 record-col d-flex align-items-center">
-          <div class="since-record text-center">
-            <div class="since-img">
-              <img src="images/since-icon.svg" alt="" />
-            </div>
-            <h6 class="text-center">Our Journey Begins</h6>
-            <h3 id="year-count">2010</h3>
-          </div>
-        </div>
+        <div class="col-12 col-md-6 px-0">
+          <div class="content-right">
+            <div class="company-record">
+              <div class="row">
+                <!-- Item 1 -->
+                <div
+                  class="col-6 record-co"
+                >
+                  <div class="since-record text-center">
+                    <div class="since-img">
+                      <img src="images/since-icon.svg" alt="" />
+                    </div>
+                    <h6 class="text-center">Our Journey Begins</h6>
+                    <h3 id="year-count">2010</h3>
+                  </div>
+                </div>
 
-        <!-- Item 2 -->
-        <div class="col-6 col-md-3 record-col d-flex align-items-center">
-          <div class="since-record text-center">
-            <div class="since-img">
-              <img src="images/customer-icon.svg" alt="" />
-            </div>
-            <h6 class="text-center" style="display: block;">Happy Customers</h6>
-            <h3 id="customer-count">0</h3>
-          </div>
-        </div>
+                <!-- Item 2 -->
+                <div
+                  class="col-6"
+                >
+                  <div class="since-record text-center">
+                    <div class="since-img">
+                      <img src="images/customer-icon.svg" alt="" />
+                    </div>
+                    <h6 class="text-center" style="display: block;">Happy
+                      Customers</h6>
+                    <h3 id="customer-count">0</h3>
+                  </div>
+                </div>
 
-        <!-- Item 3 -->
-        <div class="col-6 col-md-3 record-col d-flex align-items-center">
-          <div class="since-record text-center">
-            <div class="since-img">
-              <img src="images/project-icon.svg" alt="" />
-            </div>
-            <h6 class="text-center">Products</h6>
-            <h3 id="project-count">0</h3>
-          </div>
-        </div>
+                <!-- Item 3 -->
+               <div class="row record-row-1">
+                 <div
+                  class="col-6"
+                >
+                  <div class="since-record text-center">
+                    <div class="since-img">
+                      <img src="images/project-icon.svg" alt="" />
+                    </div>
+                    <h6 class="text-center">Products</h6>
+                    <h3 id="project-count">0</h3>
+                  </div>
+                </div>
 
-        <!-- Item 4 -->
-        <div class="col-6 col-md-3 record-col d-flex align-items-center">
-          <div class="since-record text-center">
-            <div class="since-img">
-              <img src="images/country-icon.svg" alt="" />
+                <!-- Item 4 -->
+                <div
+                  class="col-6"
+                >
+                  <div class="since-record text-center">
+                    <div class="since-img">
+                      <img src="images/country-icon.svg" alt="" />
+                    </div>
+                    <h6 class="text-center">Countries</h6>
+                    <h3 id="country-count">0</h3>
+                  </div>
+                </div>
+               </div>
+              </div>
             </div>
-            <h6 class="text-center">Countries</h6>
-            <h3 id="country-count">0</h3>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</div>
 
       </div>
     </div>
@@ -308,30 +322,28 @@
 
       <!-- Tag Filters -->
       <!-- Tag Filters -->
-<div class="productItems-list">
-<ul id="tagFilter">
-  {{#each tags}}
-    <li data-tag="{{productTag}}">{{productTag}}</li>
-  {{/each}}
-</ul>
+      <div class="productItems-list">
+        <ul id="tagFilter">
+          {{#each tags}}
+            <li data-tag="{{productTag}}">{{productTag}}</li>
+          {{/each}}
+        </ul>
 
-<div class="row discover-product-row" id="productContainer"></div>
+        <div class="row discover-product-row" id="productContainer"></div>
 
-</div>
-
+      </div>
 
       <!-- Product Cards -->
       <div class="row discover-product-row">
 
       </div>
 
-      {{!-- <div class="discover-product-btn d-flex justify-content-end">
+      {{! <div class="discover-product-btn d-flex justify-content-end">
         <button class="discover-product-button">See more</button>
-      </div> --}}
+      </div> }}
     </div>
   </div>
 </section>
-
 
 <section style="overflow-y: hidden;">
   <div class="right-choice-section">
@@ -341,7 +353,7 @@
         <div class="col-12 col-md-4 mb-4 mb-md-0">
           <div class="choice-left text-center text-md-start">
             <h2>Why We’re the Right Choice</h2>
-            <img src="images/image (3).png" alt="" class="img-fluid" />
+            <img src="images/right-choice-img.png" alt="" class="img-fluid" />
           </div>
         </div>
 
@@ -352,7 +364,9 @@
               <!-- Box 1 -->
               <div class="col-sm-6">
                 <div class="choice-inner">
-                  <div class="choice-logo-wrapper d-flex justify-content-center align-items-center">
+                  <div
+                    class="choice-logo-wrapper d-flex justify-content-center align-items-center"
+                  >
                     <div class="choice-logo">
                       <img src="images/product-safety-logo.svg" alt="" />
                     </div>
@@ -362,7 +376,8 @@
                   </div>
                   <div class="choice-description">
                     <p>
-                      All our products are designed and tested to meet strict safety regulations for reliable, worry-free operation.
+                      All our products are designed and tested to meet strict
+                      safety regulations for reliable, worry-free operation.
                     </p>
                   </div>
                 </div>
@@ -371,7 +386,9 @@
               <!-- Box 2 -->
               <div class="col-sm-6">
                 <div class="choice-inner">
-                  <div class="choice-logo-wrapper d-flex justify-content-center align-items-center">
+                  <div
+                    class="choice-logo-wrapper d-flex justify-content-center align-items-center"
+                  >
                     <div class="choice-logo">
                       <img src="images/product-support-logo.svg" alt="" />
                     </div>
@@ -381,7 +398,8 @@
                   </div>
                   <div class="choice-description">
                     <p>
-                      We use high-grade materials and certified processes to ensure long-lasting performance in every product.
+                      We use high-grade materials and certified processes to
+                      ensure long-lasting performance in every product.
                     </p>
                   </div>
                 </div>
@@ -390,7 +408,9 @@
               <!-- Box 3 -->
               <div class="col-sm-6">
                 <div class="choice-inner">
-                  <div class="choice-logo-wrapper d-flex justify-content-center align-items-center">
+                  <div
+                    class="choice-logo-wrapper d-flex justify-content-center align-items-center"
+                  >
                     <div class="choice-logo">
                       <img src="images/product-safety-logo.svg" alt="" />
                     </div>
@@ -400,7 +420,8 @@
                   </div>
                   <div class="choice-description">
                     <p>
-                      From control devices to protection systems, our 500+ products cover every key need in the LV switchgear field.
+                      From control devices to protection systems, our 500+
+                      products cover every key need in the LV switchgear field.
                     </p>
                   </div>
                 </div>
@@ -409,7 +430,9 @@
               <!-- Box 4 -->
               <div class="col-sm-6">
                 <div class="choice-inner">
-                  <div class="choice-logo-wrapper d-flex justify-content-center align-items-center">
+                  <div
+                    class="choice-logo-wrapper d-flex justify-content-center align-items-center"
+                  >
                     <div class="choice-logo">
                       <img src="images/product-support-logo.svg" alt="" />
                     </div>
@@ -419,7 +442,8 @@
                   </div>
                   <div class="choice-description">
                     <p>
-                      Our team is always ready to assist you with the right solutions, technical guidance, and after-sales care.
+                      Our team is always ready to assist you with the right
+                      solutions, technical guidance, and after-sales care.
                     </p>
                   </div>
                 </div>
@@ -434,65 +458,74 @@
   </div>
 </section>
 
-
 <section style="overflow-y: hidden;">
   <div class="industries-section">
     <div class="container">
       <div class="industries-title">
         <h2>OUR industries</h2>
-        <p>At Micron Electric, our expertise extends across a wide range of industries where precision, safety, and reliability are critical. Our solutions are engineered to meet the highest standards of performance across diverse sectors, helping businesses operate efficiently and securely.</p>
+        <p>At Micron Electric, our expertise extends across a wide range of
+          industries where precision, safety, and reliability are critical. Our
+          solutions are engineered to meet the highest standards of performance
+          across diverse sectors, helping businesses operate efficiently and
+          securely.</p>
       </div>
       <div class="industries-name-wrapper">
         <div class="row">
           <div class="col">
             <div
-              class="industries-name-box d-flex align-items-center justify-content-center" style="background: url(../images/image\ \(15\).png);
-">
-             
-            </div>
-             <div class="industries-name">
-                <h5>Switchgear manufacturing</h5>
-              </div>
-          </div>
-          <div class="col">
-            <div
-              class="industries-name-box d-flex align-items-center justify-content-center" style="background: url(../images/image\ \(24\).png);"
+              class="industries-name-box d-flex align-items-center justify-content-center"
+              style="background: url(../images/image\ \(15\).png);
+"
             >
-             
-            </div>
-             <div class="industries-name">
-                <h5>OEMS</h5>
-              </div>
-          </div>
-          <div class="col">
-            <div
-              class="industries-name-box d-flex align-items-center justify-content-center" style="background: url(../images/image\ \(20\).png);"
-            >
-            
-            </div>
-              <div class="industries-name">
-                <h5>Air Conditioning System</h5>
-              </div>
-          </div>
-          <div class="col">
-            <div
-              class="industries-name-box d-flex align-items-center justify-content-center" style="background: url(../images/image\ \(21\).png);"
-            >
-             
-            </div>
-             <div class="industries-name">
-                <h5>Utilities</h5>
-              </div>
-          </div>
-          <div class="col">
-            <div
-              class="industries-name-box d-flex align-items-center justify-content-center" style="background: url(../images/image\ \(22\).png);"
-            >
-              
+
             </div>
             <div class="industries-name">
-                <h5 class="text-center">Pumb Manufacturing</h5>
-              </div>
+              <h5>Switchgear manufacturing</h5>
+            </div>
+          </div>
+          <div class="col">
+            <div
+              class="industries-name-box d-flex align-items-center justify-content-center"
+              style="background: url(../images/image\ \(24\).png);"
+            >
+
+            </div>
+            <div class="industries-name">
+              <h5>OEMS</h5>
+            </div>
+          </div>
+          <div class="col">
+            <div
+              class="industries-name-box d-flex align-items-center justify-content-center"
+              style="background: url(../images/image\ \(20\).png);"
+            >
+
+            </div>
+            <div class="industries-name">
+              <h5>Air Conditioning System</h5>
+            </div>
+          </div>
+          <div class="col">
+            <div
+              class="industries-name-box d-flex align-items-center justify-content-center"
+              style="background: url(../images/image\ \(21\).png);"
+            >
+
+            </div>
+            <div class="industries-name">
+              <h5>Utilities</h5>
+            </div>
+          </div>
+          <div class="col">
+            <div
+              class="industries-name-box d-flex align-items-center justify-content-center"
+              style="background: url(../images/image\ \(22\).png);"
+            >
+
+            </div>
+            <div class="industries-name">
+              <h5 class="text-center">Pumb Manufacturing</h5>
+            </div>
           </div>
         </div>
       </div>
@@ -514,9 +547,9 @@
                 quality in LV switchgear and electrical components. Here’s what
                 a few of them had to say:</p>
             </div>
-            {{!-- <div class="feedback-btn">
+            {{! <div class="feedback-btn">
               <button>See more</button>
-            </div> --}}
+            </div> }}
           </div>
         </div>
         <div class="col-md-6 feedback-section">
@@ -524,17 +557,18 @@
             <div class="col-md-12 d-flex justify-content-end">
               <div class="client-wrapper-right">
                 <div class="client-wrapper d-flex align-items-center">
-                  {{!-- <div class="client-img">
+                  {{! <div class="client-img">
                     <img src="images/image (4).png" alt="" />
-                  </div> --}}
+                  </div> }}
                   <div class="client-details">
                     <div class="client-name">
-                      <h5>Ms.  Emily Turner</h5>
+                      <h5>Ms. Emily Turner</h5>
                     </div>
                     <div class="client-feedback">
                       <p>Exceptional quality and consistent delivery — Micron
                         <br />
-                        has helped streamline our procurement for electrical <br>
+                        has helped streamline our procurement for electrical
+                        <br />
                         components. A name we trust.</p>
                     </div>
                   </div>
@@ -549,9 +583,9 @@
             <div class="col-md-12 d-flex justify-content-start">
               <div class="client-wrapper-left">
                 <div class="client-wrapper d-flex align-items-center">
-                  {{!-- <div class="client-img">
+                  {{! <div class="client-img">
                     <img src="images/image (4).png" alt="" />
-                  </div> --}}
+                  </div> }}
                   <div class="client-details">
                     <div class="client-name">
                       <h5>Mr. George Preston</h5>
@@ -576,9 +610,9 @@
             <div class="col-md-12 d-flex justify-content-end">
               <div class="client-wrapper-right">
                 <div class="client-wrapper d-flex align-items-center">
-                  {{!-- <div class="client-img">
+                  {{! <div class="client-img">
                     <img src="images/image (4).png" alt="" />
-                  </div> --}}
+                  </div> }}
                   <div class="client-details">
                     <div class="client-name">
                       <h5>Eng. Joseph Mathew</h5>
@@ -621,37 +655,70 @@
               <!-- Row 1: First and Last Name -->
               <div class="row">
                 <div class="col-md-6 mb-3">
-                  <input type="text" class="form-control" id="firstName" placeholder="First Name" required />
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="firstName"
+                    placeholder="First Name"
+                    required
+                  />
                 </div>
                 <div class="col-md-6 mb-3">
-                  <input type="text" class="form-control" id="lastName" placeholder="Last Name" required />
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="lastName"
+                    placeholder="Last Name"
+                    required
+                  />
                 </div>
               </div>
 
               <!-- Row 2: Email and Phone Number -->
               <div class="row">
                 <div class="col-md-6 mb-3">
-                  <input type="email" class="form-control" id="email" placeholder="Email" required />
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    placeholder="Email"
+                    required
+                  />
                 </div>
                 <div class="col-md-6 mb-3">
-                  <input type="tel" class="form-control" id="phone" placeholder="Phone No" required />
+                  <input
+                    type="tel"
+                    class="form-control"
+                    id="phone"
+                    placeholder="Phone No"
+                    required
+                  />
                 </div>
               </div>
 
               <!-- Row 3: Message -->
               <div class="mb-3">
-                <textarea class="form-control" id="message" rows="5" placeholder="Message"></textarea>
+                <textarea
+                  class="form-control"
+                  id="message"
+                  rows="5"
+                  placeholder="Message"
+                ></textarea>
               </div>
-                 <div class="d-flex justify-content-center">
-                    <button type="submit" class="main-submit-btn" id="submitBtn">
-                      <span id="button-text">Submit</span>
-                      <div id="loading-spinner" class="text-center mt-1" style="display: none">
-                        <div class="spinner-border small-spinner" role="status">
-                          <span class="visually-hidden">Loading...</span>
-                        </div>
-                      </div>
-                    </button>
+              <div class="d-flex justify-content-center">
+                <button type="submit" class="main-submit-btn" id="submitBtn">
+                  <span id="button-text">Submit</span>
+                  <div
+                    id="loading-spinner"
+                    class="text-center mt-1"
+                    style="display: none"
+                  >
+                    <div class="spinner-border small-spinner" role="status">
+                      <span class="visually-hidden">Loading...</span>
+                    </div>
                   </div>
+                </button>
+              </div>
 
               <!-- Submit Button -->
               <div class="text-center p-0">
@@ -663,69 +730,110 @@
     </div>
   </div>
 </section>
-<footer style="overflow-y: hidden;">
+<footer style="overflow: hidden;">
   <div class="container-fluid px-0">
     <div class="footer-container">
-      <div class="logo-div">
-        <img src="images/Group 80.svg" alt="">
-      </div>
+      {{!-- <div class="logo-div">
+        <img src="images/Group 80.svg" alt="" />
+      </div> --}}
       <div class="row">
-        <div class="col-md-6 d-flex justify-content-center">
-          <div class="quick-link-section text-white">
-          <div class="quick-link-title">
-            <h5>QUICK LINKS</h5>
-          </div>
-          <div class="quick-links ">
-            <ul>
-              <li><a href="/" class="text-decoration-none text-white">Home</a></li>
-              <li><a href="/about-us" class="text-decoration-none text-white">About Us</a></li>
-              <li><a href="/downloads" class="text-decoration-none text-white">Downloads</a></li>
-              <li><a href="/contact-us" class="text-decoration-none text-white">Contact Us</a></li>
-            </ul>
-          </div>
+        <div class="col-md-3">
+          <div class="footer-logo d-flex justify-content-center">
+            <a class="navbar-brand d-flex align-items-end" href="#">
+              <img src="images/micron-logo.svg" class="img-fluid" alt="" />
+              <h1 class="compay-name text-white" style="z-index: 0;">MICRON
+                ELECTRIC</h1>
+            </a>
           </div>
         </div>
-        <div class="col-md-6 d-flex justify-content-center">
+        <div class="col-md-5 d-flex justify-content-center">
+          <div class="quick-link-section text-white">
+            <div class="quick-link-title">
+              <h5>QUICK LINKS</h5>
+            </div>
+            <div class="quick-links">
+              <ul>
+                <li><a
+                    href="/"
+                    class="text-decoration-none text-white"
+                  >Home</a></li>
+                <li><a
+                    href="/about-us"
+                    class="text-decoration-none text-white"
+                  >About Us</a></li>
+                <li><a
+                    href="/downloads"
+                    class="text-decoration-none text-white"
+                  >Downloads</a></li>
+                <li><a
+                    href="/contact-us"
+                    class="text-decoration-none text-white"
+                  >Contact Us</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 d-flex justify-content-center">
           <div class="address-section text-white">
             <div class="address-title">
               <h5>ADDRESS</h5>
             </div>
             <div class="address-list">
               <ul><li class="address-1 d-flex">
-                <img src="images/image 55 (1).svg" alt="">
-                <h6>MICRON ELECTRIC LTD 20-22, <br>Wenlock Road London N1 7GU <br> United Kingdom</h6>
-              </li>
-              <li class="address-1 d-flex">
-                <img src="images/image 57.svg" alt="">
-                <h6><a href="mailto:sales@micronelectric.co.uk" class="text-decoration-none text-white">sales@micronelectric.co.uk</a></h6>
+                  <img src="images/image 55 (1).svg" alt="" />
+                  <h6>MICRON ELECTRIC LTD 20-22,
+                    <br />Wenlock Road London N1 7GU
+                    <br />
+                    United Kingdom</h6>
+                </li>
+                 <li class="address-1 d-flex">
+                  <img src="images/phone-icon (2).svg" alt="" />
+                  <h6><a
+                      href=""
+                      class="text-decoration-none text-white"
+                    >9807 654 345</a> <br>
+                    <a
+                      href=""
+                      class="text-decoration-none text-white" style="line-height: 150%;"
+                    >9807 654 345</a></h6>
 
-              </li>
+                </li>
+                <li class="address-1 d-flex">
+                  <img src="images/image 57.svg" alt="" />
+                  <h6><a
+                      href="mailto:sales@micronelectric.co.uk"
+                      class="text-decoration-none text-white"
+                    >sales@micronelectric.co.uk</a></h6>
+
+                </li>
               </ul>
             </div>
 
-           
           </div>
         </div>
-       <div class="d-flex justify-content-center">
-          <hr class="text-white" style="width:90%;">
-       </div>
+        <div class="d-flex justify-content-center">
+          <hr class="text-white" style="width:90%;" />
+        </div>
       </div>
     </div>
   </div>
 </footer>
 
+
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const products = {{{productsJSON}}}; // Injected JSON from backend
+
   const searchInput = document.getElementById('searchInput');
   const categorySelect = document.getElementById('categorySelect');
   const suggestionsList = document.getElementById('suggestionsList');
   const searchForm = document.getElementById('searchForm');
 
-  // Show suggestions as user types
+  /* ================= Show Suggestions ================= */
   searchInput.addEventListener('input', () => {
     const query = searchInput.value.toLowerCase();
     const selectedCategory = categorySelect.value;
+
     suggestionsList.innerHTML = '';
 
     if (!query) {
@@ -733,9 +841,14 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    const matches = products.filter(p => {
-      const matchQuery = p.p_name.toLowerCase().includes(query) || p.p_code.toLowerCase().includes(query);
-      const matchCategory = !selectedCategory || p.p_category === selectedCategory;
+    const matches = products.filter((p) => {
+      const matchQuery =
+        p.p_name.toLowerCase().includes(query) ||
+        p.p_code.toLowerCase().includes(query);
+
+      const matchCategory =
+        !selectedCategory || p.p_category === selectedCategory;
+
       return matchQuery && matchCategory;
     });
 
@@ -744,22 +857,25 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    matches.slice(0, 5).forEach(p => {
+    matches.slice(0, 5).forEach((p) => {
       const li = document.createElement('li');
+
       li.textContent = `${p.p_name} (${p.p_code})`;
       li.classList.add('list-group-item', 'list-group-item-action');
+
       li.addEventListener('click', () => {
         searchInput.value = p.p_name;
         suggestionsList.innerHTML = '';
         suggestionsList.style.display = 'none';
       });
+
       suggestionsList.appendChild(li);
     });
 
     suggestionsList.style.display = 'block';
   });
 
-  // Only make API call when search button is clicked
+  /* ================= Submit Search ================= */
   searchForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
@@ -768,166 +884,196 @@ document.addEventListener('DOMContentLoaded', () => {
 
     suggestionsList.innerHTML = '';
 
-if (!query) {
-  Swal.fire({
-    icon: 'warning',
-    title: 'Oops...',
-    text: 'Please enter a product name or code',
-  });
-  return;
-}
+    if (!query) {
+      Swal.fire({
+        icon: 'warning',
+        title: 'Oops...',
+        text: 'Please enter a product name or code'
+      });
+      return;
+    }
 
+    const match = products.find((p) => {
+      const matchQuery =
+        p.p_name.toLowerCase().includes(query) ||
+        p.p_code.toLowerCase().includes(query);
 
-    const match = products.find(p => {
-      const matchQuery = p.p_name.toLowerCase().includes(query) || p.p_code.toLowerCase().includes(query);
-      const matchCategory = !selectedCategory || p.p_category === selectedCategory;
+      const matchCategory =
+        !selectedCategory || p.p_category === selectedCategory;
+
       return matchQuery && matchCategory;
     });
 
-   if (!match) {
-  Swal.fire({
-    icon: 'warning',
-    title: 'No Match Found',
-    text: 'No matching product found',
-    confirmButtonText: 'OK'
-  });
-  return;
-}
+    if (!match) {
+      Swal.fire({
+        icon: 'warning',
+        title: 'No Match Found',
+        text: 'No matching product found',
+        confirmButtonText: 'OK'
+      });
+      return;
+    }
 
-
-    // API call
+    // Redirect to product page
     window.location.href = `single-product/${match._id}`;
-
-
-
   });
 });
 </script>
 
 
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
   const products = {{{productsJSON}}}; // Injected full product array
+
   const tagItems = document.querySelectorAll('#tagFilter li');
   const productContainer = document.getElementById('productContainer');
 
+  /* ================= Visible Count ================= */
   const getVisibleCount = () => {
     const width = window.innerWidth;
+
     if (width >= 1400) return 4;
     if (width >= 1200) return 4;
     if (width >= 992) return 4;
     if (width >= 678) return 4;
+
     return 4; // default
   };
 
-  // Truncate feature points
+  /* ================= Truncate Feature Points ================= */
   const truncateFeaturePoints = () => {
-    document.querySelectorAll('.product-ul').forEach(ul => {
+    document.querySelectorAll('.product-ul').forEach((ul) => {
       const items = ul.querySelectorAll('li');
+
       items.forEach((li, index) => {
         if (index >= 3) {
-          li.style.display = 'none'; // Hide all items after the 3rd one
+          li.style.display = 'none';
         } else {
           const originalText = li.textContent.trim();
-          li.textContent = originalText.length > 25 ? originalText.slice(0, 25) + '…' : originalText;
+          li.textContent =
+            originalText.length > 25
+              ? originalText.slice(0, 25) + '…'
+              : originalText;
         }
       });
     });
   };
 
-  // Render filtered products
+  /* ================= Render Products ================= */
   const renderProducts = (filteredProducts) => {
-  productContainer.innerHTML = ''; // Clear old products
-  const limit = getVisibleCount();
-  const slicedProducts = filteredProducts.slice(0, limit);
+    productContainer.innerHTML = '';
 
-  if (slicedProducts.length === 0) {
-    productContainer.innerHTML = '<p>No products found.</p>';
-    return;
-  }
+    const limit = getVisibleCount();
+    const slicedProducts = filteredProducts.slice(0, limit);
 
-  slicedProducts.forEach(product => {
-    const fullDescription = product.p_description || '';
+    if (slicedProducts.length === 0) {
+      productContainer.innerHTML = '<p>No products found.</p>';
+      return;
+    }
 
-    // Limit to first 20 words
-    const words = fullDescription.split(/\s+/); // split by spaces
-    const shortDescription = words.slice(0, 18).join(' ') + (words.length > 18 ? '...' : '');
+    slicedProducts.forEach((product) => {
+      const fullDescription = product.p_description || '';
+      const words = fullDescription.split(/\s+/);
 
-    const productHTML = `
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
-        <div class="discover-product-box">
-          <div class="product-img-tag">
-            <img src="${product.product_image_url}" alt="${product.p_name}" />
-                 <div class="product-badge">${product.product_tag || 'New'}</div>
-                                              <div class="product-category text-start mb-0" style="padding-left:20px;padding-top:10px">${product.p_subcategory}</div>
+      const shortDescription =
+        words.slice(0, 18).join(' ') +
+        (words.length > 18 ? '...' : '');
 
+      const productHTML = `
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
+          <div class="discover-product-box">
+            <div class="product-img-tag">
+              <img src="${product.product_image_url}" alt="${product.p_name}" />
+              <div class="product-badge">
+                ${product.product_tag || 'New'}
+              </div>
+              <div class="product-category text-start mb-0"
+                   style="padding-left:20px;padding-top:10px">
+                ${product.p_subcategory}
+              </div>
+            </div>
 
-          </div>
-          <div class="tag-card-title">
-               <h5 class="productCat-name">${product.p_name}</h5>
-                             <p class="product-catCode text-start mb-2" style="padding-left:20px;">${product.p_code}</p>
+            <div class="tag-card-title">
+              <h5 class="productCat-name">${product.p_name}</h5>
+              <p class="product-catCode text-start mb-2"
+                 style="padding-left:20px;">
+                ${product.p_code}
+              </p>
+            </div>
 
-          </div>
-          <div class="product-description">
-            <p class="product-description-text">${shortDescription}</p>
-          </div>
-          <div class="tag-product-btn">
-            <button onclick="viewSingleProduct('${product._id}')">
-              Details <img src="images/Arrow 5.svg" alt="" />
-            </button>
+            <div class="product-description">
+              <p class="product-description-text">
+                ${shortDescription}
+              </p>
+            </div>
+
+            <div class="tag-product-btn">
+              <button onclick="viewSingleProduct('${product._id}')">
+                Details
+                <img src="images/Arrow 5.svg" alt="" />
+              </button>
+            </div>
           </div>
         </div>
-      </div>
-    `;
+      `;
 
-    productContainer.innerHTML += productHTML;
-  });
-};
+      productContainer.innerHTML += productHTML;
+    });
+  };
 
-
-
-  // Handle tag click
-  tagItems.forEach(tag => {
+  /* ================= Tag Click Handler ================= */
+  tagItems.forEach((tag) => {
     tag.addEventListener('click', () => {
       const selectedTag = tag.getAttribute('data-tag');
 
-      tagItems.forEach(t => t.classList.remove('active-tag'));
+      tagItems.forEach((t) => t.classList.remove('active-tag'));
       tag.classList.add('active-tag');
 
-      const filtered = products.filter(p => p.product_tag === selectedTag);
+      const filtered = products.filter(
+        (p) => p.product_tag === selectedTag
+      );
+
       renderProducts(filtered);
     });
   });
 
-  // Re-render on resize
+  /* ================= Re-render On Resize ================= */
   window.addEventListener('resize', () => {
-    const activeTag = document.querySelector('#tagFilter .active-tag')?.getAttribute('data-tag');
+    const activeTag = document
+      .querySelector('#tagFilter .active-tag')
+      ?.getAttribute('data-tag');
+
     if (activeTag) {
-      const filtered = products.filter(p => p.product_tag === activeTag);
+      const filtered = products.filter(
+        (p) => p.product_tag === activeTag
+      );
+
       renderProducts(filtered);
     }
   });
 
-  // Auto-click first tag
-  if (tagItems.length > 0) tagItems[0].click();
+  /* ================= Auto Click First Tag ================= */
+  if (tagItems.length > 0) {
+    tagItems[0].click();
+  }
 });
 
- function viewSingleProduct(productId) {
-    // Example: Navigate to a product detail page
-    window.location.href = `/single-product/${productId}`;
 
-    // Or fetch product details dynamically:
-    // fetch(`/api/product/${productId}`)
-    //   .then(response => response.json())
-    //   .then(data => console.log(data));
-  }
+/* ================= View Single Product ================= */
+function viewSingleProduct(productId) {
+  window.location.href = `/single-product/${productId}`;
 
+  // Example alternative:
+  // fetch(`/api/product/${productId}`)
+  //   .then(response => response.json())
+  //   .then(data => console.log(data));
+}
 </script>
 
 
+<script>
+document.addEventListener("DOMContentLoaded", () => {
 
-
-<script>document.addEventListener("DOMContentLoaded", () => {
   const heroTexts = [
     "Front handle provides direct manual operation.",
     "Front handle provides direct manual operation.",
@@ -937,12 +1083,16 @@ if (!query) {
   ];
 
   let currentIndex = 0;
+
   const target = document.querySelector(".quote-animated-text");
 
+  /* ================= Animate Text ================= */
   function animateHeroText(text) {
     target.innerHTML = "";
+
     text.split("").forEach((char, index) => {
       const span = document.createElement("span");
+
       span.textContent = char === " " ? "\u00A0" : char;
       target.appendChild(span);
 
@@ -952,32 +1102,42 @@ if (!query) {
     });
   }
 
+  /* ================= Initial Render ================= */
   animateHeroText(heroTexts[currentIndex]);
 
+  /* ================= Auto Rotate ================= */
   setInterval(() => {
     currentIndex = (currentIndex + 1) % heroTexts.length;
     animateHeroText(heroTexts[currentIndex]);
-  },3500);
+  }, 3500);
+
 });
 </script>
 
+
 <script>
 document.addEventListener("DOMContentLoaded", () => {
+
   const carousel = document.getElementById("carousel");
   const nextBtn = document.getElementById("nextBtn");
   const prevBtn = document.getElementById("prevBtn");
   const items = document.querySelectorAll(".box");
 
+  /* =====================================================
+     📱 MOBILE VERSION (Centered Scroll)
+  ===================================================== */
   if (window.innerWidth < 576) {
-    // ========== 📱 MOBILE = Centered Scroll ==========
+
     let currentIndex = 0;
 
     function updateMobileCarousel() {
       const boxWidth = items[0].offsetWidth + 10;
       const containerWidth = carousel.parentElement.offsetWidth;
       const offset = (containerWidth - boxWidth) / 2;
+
       carousel.style.transition = "transform 0.4s ease";
-      carousel.style.transform = `translateX(calc(${offset}px - ${currentIndex * boxWidth}px))`;
+      carousel.style.transform =
+        `translateX(calc(${offset}px - ${currentIndex * boxWidth}px))`;
     }
 
     nextBtn.addEventListener("click", () => {
@@ -997,22 +1157,29 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("resize", updateMobileCarousel);
     updateMobileCarousel();
 
-  } else {
-    // ========== 💻 DESKTOP = Infinite Loop ==========
+  }
+
+  /* =====================================================
+     💻 DESKTOP VERSION (Infinite Loop)
+  ===================================================== */
+  else {
+
     const originalBoxes = Array.from(items);
     const visibleCount = 4;
     const boxWidth = carousel.offsetWidth / visibleCount;
     const originalCount = originalBoxes.length;
+
     let index = originalCount;
 
-    // Clone left and right
+    /* ---------- Clone Left & Right ---------- */
     if (originalCount > 1) {
-      originalBoxes.forEach(box => {
+
+      originalBoxes.forEach((box) => {
         const clone = box.cloneNode(true);
         carousel.appendChild(clone);
       });
 
-      [...originalBoxes].reverse().forEach(box => {
+      [...originalBoxes].reverse().forEach((box) => {
         const clone = box.cloneNode(true);
         carousel.insertBefore(clone, carousel.firstChild);
       });
@@ -1036,15 +1203,19 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     carousel.addEventListener("transitionend", () => {
+
       if (index >= originalCount * 2) {
         carousel.style.transition = "none";
         index = originalCount;
         carousel.style.transform = `translateX(-${index * boxWidth}px)`;
-      } else if (index < originalCount) {
+      }
+
+      else if (index < originalCount) {
         carousel.style.transition = "none";
         index = originalCount + (index % originalCount);
         carousel.style.transform = `translateX(-${index * boxWidth}px)`;
       }
+
     });
 
     if (originalCount <= 1) {
@@ -1052,142 +1223,180 @@ document.addEventListener("DOMContentLoaded", () => {
       nextBtn.style.display = "none";
     }
   }
+
 });
 </script>
 
 
 <script>
-  const categories = {{{categoriesJSON}}};
+const categories = {{{categoriesJSON}}};
 const products = {{{productsJSON}}}; // Make sure to pass this from backend as JSON string containing all products
 
-document.querySelectorAll('.main-cat').forEach(mainCatElem => {
+document.querySelectorAll('.main-cat').forEach((mainCatElem) => {
+
   mainCatElem.addEventListener('mouseenter', function () {
+
     const mainCategory = this.dataset.category;
-    const category = categories.find(cat => cat.mainCategory === mainCategory);
+    const category = categories.find(
+      (cat) => cat.mainCategory === mainCategory
+    );
+
     const subMenu = this.nextElementSibling;
 
-    // Clear previous subcategories
+    /* ---------- Clear Previous Subcategories ---------- */
     subMenu.innerHTML = '';
 
     if (category && Array.isArray(category.subCategories)) {
-      category.subCategories.forEach(sub => {
+
+      category.subCategories.forEach((sub) => {
+
         const li = document.createElement('li');
-        
-        // Each subcategory link with data attribute
+
+        /* ---------- Subcategory + Product Menu ---------- */
         li.innerHTML = `
-          <a class="dropdown-item sub-cat" href="#" data-main-category="${mainCategory}" data-subcategory="${sub}">${sub}</a>
-          <ul class="dropdown-menu product-menu py-0 border-0" style="border: 1px solid #0000001A; display:none;"></ul>
+          <a class="dropdown-item sub-cat"
+             href="#"
+             data-main-category="${mainCategory}"
+             data-subcategory="${sub}">
+            ${sub}
+          </a>
+
+          <ul class="dropdown-menu product-menu py-0 border-0"
+              style="border: 1px solid #0000001A; display:none;">
+          </ul>
         `;
+
         subMenu.appendChild(li);
 
-        // Add hover event to subcategory link to load products
         const subCatLink = li.querySelector('.sub-cat');
         const productMenu = li.querySelector('.product-menu');
 
+        /* ---------- Load Products On Hover ---------- */
         subCatLink.addEventListener('mouseenter', () => {
-          // Clear previous products
+
           productMenu.innerHTML = '';
           productMenu.style.display = 'block';
 
-          // Find products matching mainCategory and subcategory
-          const matchingProducts = products.filter(p => 
-            p.p_category === mainCategory && p.p_subcategory === sub
+          const matchingProducts = products.filter(
+            (p) =>
+              p.p_category === mainCategory &&
+              p.p_subcategory === sub
           );
 
           if (matchingProducts.length > 0) {
-            matchingProducts.forEach(product => {
+
+            matchingProducts.forEach((product) => {
               const prodLi = document.createElement('li');
-              prodLi.innerHTML = `<a class="dropdown-item" href="/single-product/${product._id}">${product.p_name}</a>`;
+
+              prodLi.innerHTML = `
+                <a class="dropdown-item"
+                   href="/single-product/${product._id}">
+                  ${product.p_name}
+                </a>
+              `;
+
               productMenu.appendChild(prodLi);
             });
+
           } else {
-            productMenu.innerHTML = '<li class="dropdown-item disabled">No products found</li>';
+
+            productMenu.innerHTML = `
+              <li class="dropdown-item disabled">
+                No products found
+              </li>
+            `;
           }
         });
 
-        // Optional: hide product submenu when mouse leaves subcategory link or submenu
+        /* ---------- Hide Product Menu On Leave ---------- */
         li.addEventListener('mouseleave', () => {
           productMenu.style.display = 'none';
         });
+
       });
     }
-  });
-});
 
+  });
+
+});
 </script>
+
 <script>
-  function goToCategory(mainCategory) {
-    // Optional: encode category name for safe URL (e.g., spaces, symbols)
-    const encodedCategory = encodeURIComponent(mainCategory);
-    window.location.href = `/category/${encodedCategory}`;
-  }
+  function goToCategory(mainCategory) { // Optional: encode category name for
+  safe URL (e.g., spaces, symbols) const encodedCategory = encodeURIComponent(mainCategory); 
+  window.location.href =`/category/${encodedCategory}`; }
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
-  document.getElementById('contactForm').addEventListener('submit', async function (e) {
-    e.preventDefault();
+document.getElementById('contactForm').addEventListener('submit', async function (e) {
 
-    // Show loading spinner
-    document.getElementById('button-text').style.display = 'none';
-    document.getElementById('loading-spinner').style.display = 'block';
+  e.preventDefault();
 
-    const data = {
-      firstName: document.getElementById('firstName').value,
-      lastName: document.getElementById('lastName').value,
-      email: document.getElementById('email').value,
-      phone: document.getElementById('phone').value,
-      message: document.getElementById('message').value,
-    }; 
+  /* ================= Show Loading Spinner ================= */
+  document.getElementById('button-text').style.display = 'none';
+  document.getElementById('loading-spinner').style.display = 'block';
 
-    try {
-      // Wait for 2 seconds before submitting
-      await new Promise(resolve => setTimeout(resolve, 2000));
+  const data = {
+    firstName: document.getElementById('firstName').value,
+    lastName: document.getElementById('lastName').value,
+    email: document.getElementById('email').value,
+    phone: document.getElementById('phone').value,
+    message: document.getElementById('message').value
+  };
 
-      const response = await fetch('/admin/user-query', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
+  try {
+
+    /* ---------- Artificial Delay (2 seconds) ---------- */
+    await new Promise(resolve => setTimeout(resolve, 2000));
+
+    const response = await fetch('/admin/user-query', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    });
+
+    const result = await response.json();
+    console.log(result);
+
+    if (response.ok) {
+
+      Swal.fire({
+        icon: 'success',
+        title: 'Message Sent!',
+        text: 'We will contact you soon.',
+        confirmButtonColor: '#3085d6'
       });
-      const result = await response.json();
-       console.log(result)
 
-      if (response.ok) {
-        Swal.fire({
-          icon: 'success',
-          title: 'Message Sent!',
-          text: 'We will contact you soon.',
-          confirmButtonColor: '#3085d6',
-        });
-        document.getElementById('contactForm').reset();
-      } else {
-        Swal.fire({
-          icon: 'error',
-          title: 'Oops...',
-          text: result.message || 'Something went wrong!',
-          confirmButtonColor: '#d33',
-        });
-      }
-    } catch (error) {
+      document.getElementById('contactForm').reset();
+
+    } else {
+
       Swal.fire({
         icon: 'error',
-        title: 'Network Error',
-        text: 'Please try again later.',
-        confirmButtonColor: '#d33',
+        title: 'Oops...',
+        text: result.message || 'Something went wrong!',
+        confirmButtonColor: '#d33'
       });
-    } finally {
-      // Hide spinner and show button text again
-      document.getElementById('button-text').style.display = 'inline';
-      document.getElementById('loading-spinner').style.display = 'none';
     }
-  });
+
+  } catch (error) {
+
+    Swal.fire({
+      icon: 'error',
+      title: 'Network Error',
+      text: 'Please try again later.',
+      confirmButtonColor: '#d33'
+    });
+
+  } finally {
+
+    /* ================= Hide Spinner ================= */
+    document.getElementById('button-text').style.display = 'inline';
+    document.getElementById('loading-spinner').style.display = 'none';
+  }
+
+});
 </script>
-
-
-
-
-
-
-

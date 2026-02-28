@@ -3,8 +3,8 @@ document.addEventListener("DOMContentLoaded", function () {
         "../images/micron-hero-1.png",
         "../images/micron-hero-2.png",
         "../images/micron-hero-3.png",
-        "../images/micron-hero-4.png",
-        "../images/micron-hero-5.png",
+        // "../images/micron-hero-4.png",
+        // "../images/micron-hero-5.png",
        
     ];
 
@@ -12,8 +12,8 @@ document.addEventListener("DOMContentLoaded", function () {
         "Keeping reliable connections through",
         "Powering the future with",
         "Building trust from",
-        "Shaping industries by delivering",
-        "Delivering confidence supported by"
+        // "Shaping industries by delivering",
+        // "Delivering confidence supported by"
     ];
 
     let currentIndex = 0;
@@ -147,3 +147,15 @@ observer.observe(document.querySelector(".company-record"));
 
 
 
+  document.addEventListener("DOMContentLoaded", function () {
+    const navbar = document.querySelector(".navbar-user");
+    const navbarCollapse = document.getElementById("navbarNav");
+
+    navbarCollapse.addEventListener("show.bs.collapse", function () {
+      navbar.classList.add("mobile-active");
+    });
+
+    navbarCollapse.addEventListener("hide.bs.collapse", function () {
+      navbar.classList.remove("mobile-active");
+    });
+  });
